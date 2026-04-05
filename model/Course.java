@@ -1,4 +1,5 @@
 package model;
+
 import java.io.Serializable;
 
 public class Course implements Serializable {
@@ -12,5 +13,15 @@ public class Course implements Serializable {
         this.credits = credits;
     }
 
-    public String getCode() { return code; }
+    public String getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
 }

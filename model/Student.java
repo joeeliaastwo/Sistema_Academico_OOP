@@ -2,14 +2,19 @@ package model;
 
 public class Student extends Person {
     private String carnet;
-    private String career;
+    private String major;
 
-    public Student(String name, String carnet, String career) {
-        super(name);
+    public Student(String name, String carnet, String major) {
+        super(name); // Llama al constructor de Person
         this.carnet = carnet;
-        this.career = career;
+        this.major = major;
     }
 
-    public String getCarnet() { return carnet; }
-    public String getCareer() { return career; }
+    public String getCarnet() {
+        return carnet;
+    }
+
+    public String getMajor() {
+        return major;
+    }
 }
