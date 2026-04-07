@@ -1,10 +1,10 @@
 package model;
 
-public class Teacher extends Person {
+public class Teacher extends Person { // Herencia de la clase Person
     private String specialty;
 
     public Teacher(String name, String specialty) {
-        super(name);
+        super(name); // Llama al constructor Person
         this.specialty = specialty;
     }
 

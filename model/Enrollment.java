@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Enrollment implements Serializable {
-    private Student student;
+    private Student student; // Objetos
     private Course course;
     private double finalGrade;
     private boolean isGraded;
@@ -32,7 +32,7 @@ public class Enrollment implements Serializable {
     }
 
     public void setFinalGrade(double finalGrade) {
-        this.finalGrade = finalGrade;
+        this.finalGrade = finalGrade; // Setter para cambiar a true
         this.isGraded = true;
     }
 }

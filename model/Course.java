@@ -14,7 +14,7 @@ public class Course implements Serializable {
     }
 
     public String getCode() {
-        return code;
+        return code; // Para leer 
     }
 
     public String getName() {

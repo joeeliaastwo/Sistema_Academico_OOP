@@ -1,6 +1,6 @@
 package model;
 
-public class Student extends Person {
+public class Student extends Person { // Herencia de Person
     private String carnet;
     private String major;
 

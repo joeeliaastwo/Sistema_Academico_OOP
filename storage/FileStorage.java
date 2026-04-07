@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FileStorage {
 
-    // Metodo para guardar cualquier objeto (en nuestro caso, el servicio completo)
+    // Metodo para guardar el servicio
     public static void saveData(Object data, String fileName) {
         try {
             FileOutputStream fileOut = new FileOutputStream(fileName);
@@ -17,7 +17,7 @@ public class FileStorage {
         }
     }
 
-    // Metodo para cargar los datos al iniciar
+    // Cargar los datos
     public static Object loadData(String fileName) {
         try {
             FileInputStream fileIn = new FileInputStream(fileName);

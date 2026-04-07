@@ -1,5 +1,5 @@
 package model;
-import java.io.Serializable;
+import java.io.Serializable; // Serializador para convertir a bytes
 
 public class Person implements Serializable {
     protected String name;
@@ -11,4 +11,4 @@ public class Person implements Serializable {
     public String getName() {
         return name;
     }
-}
+}  // Esta es nuestra clase principal

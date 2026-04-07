@@ -4,7 +4,7 @@ import model.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-// Esta clase también es Serializable porque guardaremos el estado completo de las listas
+// Serializables para guardar listas
 public class AcademicService implements Serializable {
     private ArrayList<Student> students;
     private ArrayList<Teacher> teachers;
@@ -18,34 +18,34 @@ public class AcademicService implements Serializable {
         enrollments = new ArrayList<>();
     }
 
-    // HU-01: Registrar estudiante
+    // 1: Registrar estudiante
     public void registerStudent(String name, String carnet, String major) {
         students.add(new Student(name, carnet, major));
     }
 
-    // HU-02: Registrar docente
+    // 2: Registrar docente
     public void registerTeacher(String name, String specialty) {
         teachers.add(new Teacher(name, specialty));
     }
 
-    // HU-03: Registrar asignatura
+    // 3: Registrar asignatura
     public void registerCourse(String code, String name, int credits) {
         courses.add(new Course(code, name, credits));
     }
 
-    // HU-04: Matricular estudiante
+    // 4: Matricular estudiante
     public boolean enrollStudent(String carnet, String courseCode) {
         Student foundStudent = findStudentByCarnet(carnet);
         Course foundCourse = findCourseByCode(courseCode);
 
         if (foundStudent == null || foundCourse == null) {
-            return false; // No se encontró el estudiante o el curso
+            return false; // No existe
         }
 
-        // Validación: no matricular dos veces
+        // Solo matriculado una vez
         for (Enrollment e : enrollments) {
             if (e.getStudent().getCarnet().equals(carnet) && e.getCourse().getCode().equals(courseCode)) {
-                return false; // Ya está matriculado
+                return false; // Ya matriculado
             }
         }
 
@@ -53,7 +53,7 @@ public class AcademicService implements Serializable {
         return true;
     }
 
-    // HU-05: Registrar calificaciones
+    // 5: Registrar calificaciones
     public boolean registerGrade(String carnet, String courseCode, double grade) {
         for (Enrollment e : enrollments) {
             if (e.getStudent().getCarnet().equals(carnet) && e.getCourse().getCode().equals(courseCode)) {
@@ -64,7 +64,7 @@ public class AcademicService implements Serializable {
         return false;
     }
 
-    // HU-06: Historial académico
+    // 6: Historial académico
     public void showStudentHistory(String carnet) {
         System.out.println("--- Historial Academico ---");
         boolean found = false;
@@ -80,7 +80,7 @@ public class AcademicService implements Serializable {
         }
     }
 
-    // HU-08: Reporte académico (Promedio por estudiante)
+    // 8: Reporte académico
     public void generateStudentReport(String carnet) {
         double sum = 0;
         int count = 0;
@@ -97,7 +97,7 @@ public class AcademicService implements Serializable {
         }
     }
 
-    // Métodos auxiliares de búsqueda
+    // auxiliares
     private Student findStudentByCarnet(String carnet) {
         for (Student s : students) {
             if (s.getCarnet().equals(carnet)) return s;

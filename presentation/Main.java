@@ -11,7 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         AcademicService service = null;
 
-        // HU-07: Cargar datos al iniciar
+        // 7: Cargar datos al iniciar
         System.out.println("Cargando sistema...");
         Object loadedData = FileStorage.loadData(FILE_NAME);
         if (loadedData != null && loadedData instanceof AcademicService) {
@@ -103,7 +103,7 @@ public class Main {
                     service.generateStudentReport(rCarnet);
                     break;
                 case "8":
-                    // HU-07: Guardar datos al salir
+                    // 7: Guardar datos al salir
                     FileStorage.saveData(service, FILE_NAME);
                     System.out.println("Datos guardados. Saliendo del sistema...");
                     exit = true;
